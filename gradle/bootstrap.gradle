@@ -1,0 +1,11 @@
+def gradleDirectory = buildscript.sourceFile.parentFile
+def rootDirectory = gradleDirectory.parentFile
+
+// Export gradle and root directory
+project.ext.gradleDirectory = gradleDirectory
+project.ext.rootDirectory = rootDirectory
+
+// Export repository configurations for both buildscript and project dependencies
+project.ext.repositoryConfiguration = {
+	mavenLocal()
+}

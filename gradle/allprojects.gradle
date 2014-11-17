@@ -1,0 +1,10 @@
+// Default properties
+group = 'ahimsa'
+version = '1.0.0'
+
+// Dependency repositories configuration
+repositories project.repositoryConfiguration
+
+// Includes
+//apply from: "${project.gradleDirectory}/editors.gradle"
+//apply from: "${project.gradleDirectory}/utils.gradle"

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee">
+
+	<context-param>
+		<param-name>application-id</param-name>
+		<param-value>ahimsa</param-value>
+	</context-param>
+
+</web-app>
