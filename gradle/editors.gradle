@@ -1,0 +1,10 @@
+// Editor plugins
+apply plugin: 'eclipse-wtp' // Eclipse
+apply plugin: 'idea' // IntelliJ
+
+idea.module {
+	// Set gradle output directories in IntelliJ
+	inheritOutputDirs = false
+	outputDir = file('build/classes/main')
+	testOutputDir = file('build/classes/test')
+}

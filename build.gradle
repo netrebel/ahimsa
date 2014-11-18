@@ -1,20 +1,11 @@
 buildscript {
     apply from: 'gradle/bootstrap.gradle'
-    //repositories project.repositoryConfiguration
+    repositories project.repositoryConfiguration
 
 }
 
 apply plugin: 'java'
 sourceCompatibility = 1.7
-
-apply plugin: 'idea' // IntelliJ
-
-idea.module {
-    // Set gradle output directories in IntelliJ
-    inheritOutputDirs = false
-    outputDir = file('build/classes/main')
-    testOutputDir = file('build/classes/test')
-}
 
 allprojects {
     apply from: "${project.gradleDirectory}/allprojects.gradle"
@@ -22,7 +13,4 @@ allprojects {
 
 subprojects {
     apply from: "${project.gradleDirectory}/java.gradle"
-    repositories {
-        mavenCentral()
-    }
 }

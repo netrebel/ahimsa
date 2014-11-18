@@ -6,5 +6,5 @@ version = '1.0.0'
 repositories project.repositoryConfiguration
 
 // Includes
-//apply from: "${project.gradleDirectory}/editors.gradle"
+apply from: "${project.gradleDirectory}/editors.gradle"
 //apply from: "${project.gradleDirectory}/utils.gradle"

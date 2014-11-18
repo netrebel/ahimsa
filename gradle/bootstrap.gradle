@@ -8,4 +8,5 @@ project.ext.rootDirectory = rootDirectory
 // Export repository configurations for both buildscript and project dependencies
 project.ext.repositoryConfiguration = {
 	mavenLocal()
+    mavenCentral()
 }
