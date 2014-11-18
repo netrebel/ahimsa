@@ -1,6 +1,6 @@
-package com.demo.resources;
+package com.ahimsa.resources;
 
-import com.demo.models.Order;
+import com.ahimsa.models.Order;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import org.mongojack.JacksonDBCollection;

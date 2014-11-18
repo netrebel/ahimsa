@@ -1,8 +1,7 @@
-package com.demo;
+package com.ahimsa;
 
 import com.mongodb.MongoClient;
 import com.yammer.dropwizard.lifecycle.Managed;
-import org.eclipse.jetty.util.component.LifeCycle;
 
 /**
  * @author Miguel Reyes

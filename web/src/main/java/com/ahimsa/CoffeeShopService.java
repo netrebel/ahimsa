@@ -1,6 +1,6 @@
-package com.demo;
+package com.ahimsa;
 
-import com.demo.resources.CoffeeShopResource;
+import com.ahimsa.resources.CoffeeShopResource;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 import com.yammer.dropwizard.Service;

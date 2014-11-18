@@ -1,4 +1,4 @@
-package com.demo.models;
+package com.ahimsa.models;
 
 import org.mongojack.Id;
 import org.mongojack.ObjectId;

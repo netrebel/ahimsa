@@ -1,4 +1,4 @@
-package com.demo;
+package com.ahimsa;
 
 import com.yammer.dropwizard.config.Configuration;
 
