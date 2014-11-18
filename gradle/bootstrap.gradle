@@ -5,6 +5,16 @@ def rootDirectory = gradleDirectory.parentFile
 project.ext.gradleDirectory = gradleDirectory
 project.ext.rootDirectory = rootDirectory
 
+// Load properties from root ahimsa.properties, evaluate and add to root project
+def propertiesFile = new File(rootDirectory, "ahimsa.properties")
+def properties = new Properties()
+propertiesFile.withInputStream { properties.load(it) }
+properties.each { key, value ->
+	if (!project.ext.properties.containsKey(key)) {
+		project.ext[key] = Eval.me(value)
+	}
+}
+
 // Export repository configurations for both buildscript and project dependencies
 project.ext.repositoryConfiguration = {
 	mavenLocal()
