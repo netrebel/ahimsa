@@ -1,11 +1,9 @@
 package com.ahimsa.resources;
 
+import com.ahimsa.CoffeeService;
 import com.ahimsa.models.Order;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import org.mongojack.JacksonDBCollection;
-import org.mongojack.WriteResult;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -17,16 +15,14 @@ import java.net.URI;
  *         Time: 4:09 PM
  */
 @Path("/coffeeshop")
-@Produces(MediaType.APPLICATION_JSON)
 public class CoffeeShopResource {
 
-    private final DB database;
-
-    public CoffeeShopResource(final DB database) {
-        this.database = database;
-    }
+    //    private final DB database;
+    @Inject
+    private CoffeeService coffeeService;
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     public Response welcome() {
         return Response.ok().build();
     }
@@ -38,15 +34,8 @@ public class CoffeeShopResource {
 
         order.coffeeShopId = coffeeShopId;
 
-        DBCollection orders = database.getCollection("orders");
-        JacksonDBCollection<Order, String> collection = JacksonDBCollection.wrap(orders, Order.class, String.class);
-
-        WriteResult<Order, String> result = collection.insert(order);
-        if (result == null) {
-            return Response.serverError().build();
-        }
-        order.id = result.getSavedId();
-        return Response.created(URI.create(order.id)).entity(order).build();
+        Order savedOder = coffeeService.insert(order);
+        return Response.created(URI.create(savedOder._id)).entity(savedOder).build();
     }
 
 }

@@ -1,24 +1,17 @@
 package com.ahimsa.models;
 
-import org.mongojack.Id;
-import org.mongojack.ObjectId;
-
 /**
  * @author Miguel Reyes
  *         Date: 11/17/14
  *         Time: 2:41 PM
  */
 public class Order {
-
-    @ObjectId
-    @Id
-    public String id;
+    public String _id;
 
     public long coffeeShopId;
     public DrinkType type;
     public String size;
     public String name;
-    public String[] selectedOptions;
 
     public class DrinkType {
         public String name;

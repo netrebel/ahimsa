@@ -1,4 +1,8 @@
 rootProject.name = 'ahimsa'
 
-include 'web'
+include(
+        'web',
+        'common:mongo',
+        'common:configuration'
+)
 

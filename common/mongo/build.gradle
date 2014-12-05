@@ -1,0 +1,17 @@
+dependencies {
+    compile project(':common:configuration')
+//    compile project(':common:json')
+//    compile project(':common:utils')
+
+    // Mongodb
+    compile "org.mongodb:mongo-java-driver:${project['versions.mongo-java-driver']}"
+//    compile "com.sun.jersey:jersey-server:1.18.2"
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile "javax.inject:javax.inject:1"
+    compile("org.jongo:jongo:${project['versions.jongo']}") {
+        exclude group:'com.fasterxml.jackson.core'
+    }
+
+    // JodaTimeTransformer
+    compile "joda-time:joda-time:${project['versions.joda-time']}"
+}
