@@ -11,7 +11,7 @@ public class Order {
     public long coffeeShopId;
     public DrinkType type;
     public String size;
-    public String name;
+    public String drinker;
 
     public class DrinkType {
         public String name;

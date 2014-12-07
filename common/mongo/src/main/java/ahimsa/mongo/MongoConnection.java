@@ -35,6 +35,13 @@ public class MongoConnection {
         T map(T value);
     }
 
+    public MongoConnection () {
+        System.out.print("Initializing");
+
+        //TODO should be call automatically
+        setupMongoClient();
+    }
+
     public boolean isHealthy() {
         return healthChecker.isHealthy();
     }

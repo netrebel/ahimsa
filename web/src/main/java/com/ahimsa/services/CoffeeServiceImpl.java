@@ -1,4 +1,4 @@
-package com.ahimsa;
+package com.ahimsa.services;
 
 import ahimsa.mongo.MongoCollection;
 import ahimsa.mongo.MongoConnection;
@@ -14,12 +14,12 @@ import java.util.UUID;
  *         Time: 4:20 PM
  */
 @Singleton
-public class CoffeeService {
+public class CoffeeServiceImpl implements CoffeeService {
 
     private MongoCollection ordersCollection;
 
     @Inject
-    public CoffeeService(MongoConnection mongoConnection) {
+    public CoffeeServiceImpl(MongoConnection mongoConnection) {
         String DATABASE = "CoffeeShop";
         String ORDERS_COLLECTION = "orders";
         ordersCollection = mongoConnection.getDatabase(DATABASE).getCollection(ORDERS_COLLECTION);

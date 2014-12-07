@@ -1,7 +1,8 @@
 package com.ahimsa.resources;
 
-import com.ahimsa.CoffeeService;
 import com.ahimsa.models.Order;
+import com.ahimsa.services.CoffeeService;
+import com.ahimsa.services.MyService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -19,12 +20,15 @@ public class CoffeeShopResource {
 
     //    private final DB database;
     @Inject
+    private MyService myService;
+
+    @Inject
     private CoffeeService coffeeService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response welcome() {
-        return Response.ok().build();
+        return Response.ok(myService.hello()).build();
     }
 
     @POST
