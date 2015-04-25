@@ -7,6 +7,7 @@ dependencies {
     compile ("org.glassfish.hk2:guice-bridge:2.3.0")
     compile ('com.google.inject:guice:3.0')
     compile ('com.google.inject.extensions:guice-servlet:3.0')
+    compile ('io.reactivex:rxjava:1.0.7')
     compile project(':common:configuration')
     compile project(':common:mongo')
 }
