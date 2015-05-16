@@ -11,9 +11,26 @@ Technologies used:
 * Java
 * MongoDB (mongojack)
 
-## Run
+# Run
 
 This project can be run in two ways:
 
 1. Deploy as a WAR file in Tomcat
-2. Run with Jetty by running the main method in the class CoffeeShopService
+
+## Test URLs
+
+* GET http://localhost:8080/api/coffeeshop
+
+* POST http://localhost:8080/api/coffeeshop/1/order
+
+```
+{
+    "coffeeShopId" : 1,
+    "type" : {
+        "name" : "latte",
+        "family": "coffee"
+    },
+    "size" : "large",
+    "drinker": "Miguel"
+}
+```
