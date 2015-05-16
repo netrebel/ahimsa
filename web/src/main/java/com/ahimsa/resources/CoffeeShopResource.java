@@ -7,8 +7,6 @@ import com.ahimsa.services.MyService;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.net.URI;
 
 /**
  * @author Miguel Reyes
@@ -27,19 +25,18 @@ public class CoffeeShopResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response welcome() {
-        return Response.ok(myService.hello()).build();
+    public String welcome() {
+        return myService.hello();
     }
 
     @POST
     @Path("/{id}/order")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response placeMyOrder(@PathParam("id") long coffeeShopId, Order order) {
-
+    @Produces(MediaType.APPLICATION_JSON)
+    public Order placeMyOrder(@PathParam("id") long coffeeShopId, Order order) {
         order.coffeeShopId = coffeeShopId;
-
-        Order savedOder = coffeeService.insert(order);
-        return Response.created(URI.create(savedOder._id)).entity(savedOder).build();
+        Order savedOrder = coffeeService.insert(order);
+        return savedOrder;
     }
 
 }

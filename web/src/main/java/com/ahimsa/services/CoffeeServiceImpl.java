@@ -20,13 +20,12 @@ public class CoffeeServiceImpl implements CoffeeService {
 
     @Inject
     public CoffeeServiceImpl(MongoConnection mongoConnection) {
-        String DATABASE = "CoffeeShop";
-        String ORDERS_COLLECTION = "orders";
-        ordersCollection = mongoConnection.getDatabase(DATABASE).getCollection(ORDERS_COLLECTION);
+        ordersCollection = mongoConnection.getDatabase("CoffeeShop").getCollection("orders");
     }
 
     public Order insert(Order order) {
         String id = newId();
+        order._id = id;
         ordersCollection.insertEntity(order);
         return findById(id);
     }
