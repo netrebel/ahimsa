@@ -1,6 +1,6 @@
 // Use Java 1.7
 apply plugin: 'java'
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 
 /*
  * Default dependencies for all java projects
