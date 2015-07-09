@@ -1,4 +1,4 @@
-package com.ahimsa.lambdas;
+package com.ahimsa.samples.lambdas;
 
 import java.util.Arrays;
 import java.util.List;

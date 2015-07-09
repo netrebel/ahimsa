@@ -1,4 +1,4 @@
-package com.ahimsa.reactivex.yahoofinance;
+package com.ahimsa.samples.reactivex.yahoofinance;
 
 import yahoofinance.YahooFinance;
 

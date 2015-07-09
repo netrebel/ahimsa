@@ -1,4 +1,4 @@
-package com.ahimsa.reactivex;
+package com.ahimsa.samples.reactivex;
 
 import rx.Observable;
 import rx.Observer;
