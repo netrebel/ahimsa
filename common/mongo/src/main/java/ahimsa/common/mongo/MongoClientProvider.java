@@ -41,12 +41,7 @@ public class MongoClientProvider implements Provider<MongoClient> {
 
         // Create MongoClient instance
         MongoClientURI uri = new MongoClientURI(connectionString);
-        try {
-            mongoClient = new MongoClient(uri);
-        } catch (UnknownHostException e) {
-            LOG.error("Invalid MongoDB connection string: " + uri, e);
-            throw new IllegalArgumentException("Invalid MongoDB connection string: " + uri, e);
-        }
+        mongoClient = new MongoClient(uri);
     }
 
     @PreDestroy

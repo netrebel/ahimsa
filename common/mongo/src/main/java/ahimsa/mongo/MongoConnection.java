@@ -18,7 +18,7 @@ import java.util.Map;
 
 /**
  * An injectable MongoConnection that creates Jongo-backed MongoCollections.
- * <p/>
+ * <p>
  * The entry class for using the dazoo.mongo package.
  */
 @Singleton
@@ -35,7 +35,7 @@ public class MongoConnection {
         T map(T value);
     }
 
-    public MongoConnection () {
+    public MongoConnection() {
         System.out.print("Initializing");
 
         //TODO should be call automatically
@@ -79,12 +79,8 @@ public class MongoConnection {
 
         // Create MongoClient instance
         MongoClientURI uri = new MongoClientURI(connectionString);
-        try {
-            mongoClient = new MongoClient(uri);
-        } catch (UnknownHostException e) {
-            LOG.error("Invalid MongoDB connection string: " + uri, e);
-            throw new IllegalArgumentException("Invalid MongoDB connection string: " + uri, e);
-        }
+        mongoClient = new MongoClient(uri);
+
     }
 
     @PreDestroy
